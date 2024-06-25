@@ -70,7 +70,7 @@ namespace ProblematicProblem
                 }
             }
 
-            while (cont)
+            do
             {
                 Console.Write("Connecting to the database");
                 for (int i = 0; i < 10; i++)
@@ -87,7 +87,7 @@ namespace ProblematicProblem
                 }
                 Console.WriteLine();
                 Random rng = new Random();
-                int randomNumber = rng.Next(0,activities.Count-1);
+                int randomNumber = rng.Next(0, activities.Count - 1);
                 var randomActivity = activities[randomNumber];
 
                 if (userAge > 21 && randomActivity == "Wine Tasting")
@@ -95,13 +95,13 @@ namespace ProblematicProblem
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
                     activities.Remove(randomActivity);
-                    randomNumber = rng.Next(0,(activities.Count - 1));
+                    randomNumber = rng.Next(0, (activities.Count - 1));
                     randomActivity = activities[randomNumber];
                 }
                 Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
                 cont = YesNoExpressions.ToTrueFalse(Console.ReadLine());
-            }
+            } while (cont);
         }
     }
 }
