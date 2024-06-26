@@ -98,7 +98,7 @@ namespace ProblematicProblem
                     randomNumber = rng.Next(0, (activities.Count - 1));
                     randomActivity = activities[randomNumber];
                 }
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                Console.WriteLine($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
                 cont = YesNoExpressions.ToTrueFalse(Console.ReadLine());
             } while (cont);
